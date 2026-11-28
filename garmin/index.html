@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Nordpace - Garmin</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; background: #0d0d0d; color: #f2f2f2;
+         display: flex; min-height: 100vh; align-items: center; justify-content: center; margin: 0; text-align: center; }
+  a { color: #3ddbb0; }
+</style>
+</head>
+<body>
+<main>
+  <p>Sender deg tilbake til Nordpace ...</p>
+  <p><a id="lenke" href="#">Åpne Nordpace</a></p>
+</main>
+<script>
+  // Garmin sender brukeren hit med ?code=...&state=... etter innlogging.
+  // Vi sender bare spørringen videre til appen. Ingenting lagres eller sendes andre steder.
+  var mal = "nordpace://hessenh.github.io/garmin" + window.location.search;
+  document.getElementById("lenke").href = mal;
+  window.location.replace(mal);
+</script>
+</body>
+</html>
